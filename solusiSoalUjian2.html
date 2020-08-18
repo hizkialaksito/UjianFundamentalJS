@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arrayAngka=[]
+    for (i=0; i<=2; i++){
+        arrayAngka.push(prompt('Masukkan angka!'))
+    }
+    arrayAngka.sort((a,b)=>a-b)
+    console.log(arrayAngka)
+
+    var a=0
+    var angkaTerbesar=(arrayAngka)=>{
+        for (j=0; j<arrayAngka.length; j++){
+            if (arrayAngka[j]>a){
+                a=arrayAngka[j]
+            }
+        }
+        console.log('Nilai tertinggi: '+a)
+    }
+    angkaTerbesar(arrayAngka)
+    console.log('\n')
+    var b=arrayAngka.length
+    var angkaTerkecil=(arrayAngka)=>{
+        for (j=arrayAngka.length; j>=0; j--){
+            if (arrayAngka[j]<b){
+                b=arrayAngka[j]
+            }
+        }
+        console.log('Nilai terkecil: '+b)
+    }
+    angkaTerkecil(arrayAngka)
+</script>
+</html>

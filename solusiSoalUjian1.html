@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Drawing Tools</h1>
+    <p>1. Persegi</p>
+    <p>2. Segitiga siku-siku rata kiri</p>
+    <p>3. Segitiga siku-siku rata kanan</p>
+    <form id="form">
+        <p>Jenis bangunan: <input type="number"></p>
+        <p>Ukuran: <input type="number"></p>
+    </form>
+    <button onclick="drawingTools()">Lihat</button>
+    <p id="output"></p>
+</body>
+<script>
+    let drawingTools=()=>{
+        var jenisBangun=document.getElementById('form').elements[0].value
+        var ukuran=document.getElementById('form').elements[1].value
+        var output=''
+        if (jenisBangun==1){
+            for (i=0; i<ukuran; i++){
+                for (j=0; j<ukuran; j++){
+                    output+='*'
+                }
+                output+='<br>'
+            }
+            document.getElementById('output').innerHTML=output
+        }
+        else if (jenisBangun==2){
+            for (i=0; i<ukuran; i++){
+                for (j=0; j<ukuran; j++){
+                    output+='*'
+                    if (i==j){
+                        break
+                    }
+                }
+                output+='<br>'
+            }
+            document.getElementById('output').innerHTML=output
+        }
+        else if(jenisBangun==3){
+            for (i=0; i<ukuran; i++){
+                for (j=0; j<(ukuran-i); j++){ // Cetak spasi
+                    output+='&nbsp;&nbsp;'
+                }
+                for (k=0; k<ukuran; k++){ // Cetak '*'
+                    output+='*'
+                    if (i==k){
+                        break
+                    }
+                }
+                output+='<br>'
+            }
+            document.getElementById('output').innerHTML=output
+        }
+        else{
+            alert ('Coba ulangi input!')
+        }
+    }
+</script>
+</html>
